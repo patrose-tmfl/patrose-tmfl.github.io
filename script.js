@@ -50,6 +50,7 @@ function getStanding(team, pos) {
 	return tr
 }
 function renderTable(teams) {
+	tb.innerHTML = ""
 	for (let n in teams) {
 		let t = teams[n]
 		if (n < podium.length) {
@@ -63,8 +64,7 @@ function renderTable(teams) {
 				flag.nextSibling.innerText = t.name
 			} catch { }
 		} else {
-			let p = Number(n)+1
-			tb.innerHTML = ""
+			let p = Number(n) + 1
 			tb.appendChild(getStanding(t, p))
 		}
 	}
